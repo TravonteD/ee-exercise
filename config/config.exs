@@ -7,10 +7,6 @@
 # General application configuration
 use Mix.Config
 
-config :weather,
-  ecto_repos: [Weather.Repo],
-  env: :dev
-
 # Configures the endpoint
 config :weather, WeatherWeb.Endpoint,
   url: [host: "localhost"],
