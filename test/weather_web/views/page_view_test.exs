@@ -91,4 +91,12 @@ defmodule WeatherWeb.PageViewTest do
         ]
       }
   end
+
+  test "error.json" do
+    message = "this is a test message"
+
+    rendered_error = WeatherWeb.WeatherView.render("error.json", %{message: message})
+
+    assert rendered_error == %{error: message}
+  end
 end

@@ -8,6 +8,12 @@ defmodule WeatherWeb.WeatherView do
     Map.merge(current, %{daily: daily})
   end
 
+  def render("error.json", %{message: message}) do
+    %{
+      error: message
+    }
+  end
+
   defp map_current_data(data) do
     %{
       "dt" => date,
