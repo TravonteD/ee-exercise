@@ -1,0 +1,21 @@
+apiversion: v1
+kind: Pod
+metadata:
+  name: weather
+spec:
+  containers: 
+    - name: weather
+      image: docker.pkg.github.com/travonted/ee-exercise/weather
+      ports:
+        - containerPort: 4000
+      env:
+        - name: SECRET_KEY_BASE
+          valueFrom:
+            secretKeyRef:
+              name: secret_key
+              key: SECRET_KEY_BASE
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: api_key
+              key: API_KEY
